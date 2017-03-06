@@ -1,0 +1,44 @@
+#! /bin/bash
+#
+# Return the version of the Raspberry Pi we are running on
+# Written by Andy Taylor (MW0MWZ)
+#
+
+# Pull the CPU Model from /proc/cpuinfo
+modelName=`grep 'model name' /proc/cpuinfo | sed 's/.*: //'`
+
+if [[ $modelName == "ARM"* ]]
+then
+	# Pull the Board revision from /proc/cpuinfo
+	boardRev=`grep 'Revision' /proc/cpuinfo | sed 's/.*: //'`
+
+	# Make the board revision human readable
+	case $boardRev in
+	*0002) raspberryVer="Model B Revision 1.0 (256MB)";;
+	*0003) raspberryVer="Model B Revision 1.0 + ECN0001 (no fuses, D14 removed) (256MB)";;
+	*0004) raspberryVer="Model B Revision 2.0 Mounting holes (256MB)";;
+	*0005) raspberryVer="Model B Revision 2.0 Mounting holes (256MB)";;
+	*0006) raspberryVer="Model B Revision 2.0 Mounting holes (256MB)";;
+	*0007) raspberryVer="Model A Mounting holes (256MB)";;
+	*0008) raspberryVer="Model A Mounting holes (256MB)";;
+	*0009) raspberryVer="Model A Mounting holes (256MB)";;
+	*000d) raspberryVer="Model B Revision 2.0 Mounting holes (512MB)";;
+	*000e) raspberryVer="Model B Revision 2.0 Mounting holes (512MB)";;
+	*000f) raspberryVer="Model B Revision 2.0 Mounting holes (512MB)";;
+	*0010) raspberryVer="Model B+ (512MB)";;
+	*0011) raspberryVer="Compute Module (512MB)";;
+	*0012) raspberryVer="Model A+ (256MB)";;
+	*a01041) raspberryVer="Pi 2 Model B (1GB) - Sony, UK";;
+	*a21041) raspberryVer="Pi 2 Model B (1GB) - Embest, China";;
+	*900092) raspberryVer="Pi Zero (512MB)";;
+	*a02082) raspberryVer="Pi 3 Model B (1GB) - Sony, UK";;
+	*a22082) raspberryVer="Pi 3 Model B (1GB) - Embest, China";;
+	*) raspberryVer="Unknown ARM based System";;
+	esac
+
+	echo $raspberryVer
+
+else
+	echo "Generic "`uname -p`" class computer"
+fi
+
