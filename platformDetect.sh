@@ -6,6 +6,7 @@
 
 # Pull the CPU Model from /proc/cpuinfo
 modelName=`grep 'model name' /proc/cpuinfo | sed 's/.*: //'`
+hardwareField=`grep 'Hardware' /proc/cpuinfo | sed 's/.*: //'`
 
 if [[ $modelName == "ARM"* ]]
 then
@@ -47,7 +48,9 @@ then
 	esac
 
 	echo $raspberryVer
-
+elif [[ $hardwareField == "sun8i"* ]]
+then
+	echo "Generic sun8i SBC"
 else
 	echo "Generic "`uname -p`" class computer"
 fi
