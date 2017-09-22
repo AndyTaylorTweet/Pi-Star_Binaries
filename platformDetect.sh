@@ -50,7 +50,7 @@ then
 	echo $raspberryVer
 elif [[ $hardwareField == "sun8i"* ]]
 then
-	echo "Generic sun8i SBC"
+	echo "sun8i based Pi Clone SBC"
 else
 	echo "Generic "`uname -p`" class computer"
 fi
