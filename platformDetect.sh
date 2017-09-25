@@ -47,13 +47,16 @@ then
 	*) raspberryVer="Unknown ARM based System";;
 	esac
 
-	echo $raspberryVer
+	if [[ $hardwareField == "ODROID"* ]]
+	then
+		echo "Odroid XU3/XU4 System"
+	else
+		echo $raspberryVer
+	fi
+	
 elif [[ $hardwareField == "sun8i"* ]]
 then
 	echo "sun8i based Pi Clone SBC"
-elif [[ $hardwareField == "ODROID"* ]]
-then
-	echo "Odroid System"
 else
 	echo "Generic "`uname -p`" class computer"
 fi
