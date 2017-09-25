@@ -56,7 +56,7 @@ then
 	
 elif [[ $hardwareField == "sun8i"* ]]
 then
-	echo "sun8i based Pi Clone SBC"
+	echo "sun8i based Pi Clone"
 else
 	echo "Generic "`uname -p`" class computer"
 fi
