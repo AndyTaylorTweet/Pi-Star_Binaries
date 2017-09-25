@@ -51,6 +51,9 @@ then
 elif [[ $hardwareField == "sun8i"* ]]
 then
 	echo "sun8i based Pi Clone SBC"
+elif [[ $hardwareField == "ODROID"* ]]
+then
+	echo "Odroid System"
 else
 	echo "Generic "`uname -p`" class computer"
 fi
