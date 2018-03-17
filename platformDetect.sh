@@ -41,11 +41,12 @@ then
 	*a01040) raspberryVer="Pi 2 Model B (1GB) - Sony, UK";;
 	*a01041) raspberryVer="Pi 2 Model B (1GB) - Sony, UK";;
 	*a02082) raspberryVer="Pi 3 Model B (1GB) - Sony, UK";;
+	*a020d3) raspberryVer="Pi 3 Model B+ (1GB) - Sony, UK";;
 	*a020a0) raspberryVer="Compute Module 3 Rev 1.0 (1GB)";;
 	*a21041) raspberryVer="Pi 2 Model B (1GB) - Embest, CH";;
 	*a22042) raspberryVer="Pi 2 Model B (1GB) - Embest, CH";;
 	*a22082) raspberryVer="Pi 3 Model B (1GB) - Embest, CH";;
-	*a32082) raspberryVer="Pi 3 Model B (1GB) - Sony, UK";;
+	*a32082) raspberryVer="Pi 3 Model B (1GB) - Sony, JPN";;
 	*) raspberryVer="Unknown ARM based System";;
 	esac
 
