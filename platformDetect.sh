@@ -38,6 +38,7 @@ then
 	*900093) raspberryVer="Pi Zero Rev 1.3 (512MB)";;
 	*9000c1) raspberryVer="Pi Zero W Rev 1.1 (512MB)";;
 	*920093) raspberryVer="Pi Zero Rev 1.3 (512MB)";;
+	*9020e0) raspberryVer="Pi 3 Model A+ (512MB) - Sony, UK";;
 	*a01040) raspberryVer="Pi 2 Model B (1GB) - Sony, UK";;
 	*a01041) raspberryVer="Pi 2 Model B (1GB) - Sony, UK";;
 	*a02082) raspberryVer="Pi 3 Model B (1GB) - Sony, UK";;
