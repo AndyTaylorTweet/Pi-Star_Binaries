@@ -48,6 +48,7 @@ then
 	*a22042) raspberryVer="Pi 2 Model B (1GB) - Embest, CH";;
 	*a22082) raspberryVer="Pi 3 Model B (1GB) - Embest, CH";;
 	*a32082) raspberryVer="Pi 3 Model B (1GB) - Sony, JPN";;
+	*a52082) raspberryVer="Pi 3 Model B (1GB) - Stadium";;
 	*) raspberryVer="Unknown ARM based System";;
 	esac
 
