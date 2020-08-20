@@ -48,6 +48,8 @@ if [[ ${modelName} == "ARM"* ]]; then
 	*a22082) raspberryVer="Pi 3 Model B (1GB) - Embest, CH";;
 	*a32082) raspberryVer="Pi 3 Model B (1GB) - Sony, JPN";;
 	*a52082) raspberryVer="Pi 3 Model B (1GB) - Stadium";;
+	*a22083) raspberryVer="Pi 3 Model B (1GB) - Embest";;
+	*a02100) raspberryVer="Compute Module 3+ Rev 1.0 (1GB)";;
 	*) raspberryVer="Unknown ARM based System";;
 	esac
 
