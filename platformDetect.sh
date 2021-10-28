@@ -1,3 +1,4 @@
+
 #! /bin/bash
 #
 # Return the version of the Raspberry Pi we are running on
@@ -5,12 +6,16 @@
 #
 
 # Pull the CPU Model from /proc/cpuinfo
-modelName=`grep 'model name' /proc/cpuinfo | sed 's/.*: //'`
-hardwareField=`grep 'Hardware' /proc/cpuinfo | sed 's/.*: //'`
+modelName=$(grep 'model name' /proc/cpuinfo | sed 's/.*: //')
+hardwareField=$(grep 'Hardware' /proc/cpuinfo | sed 's/.*: //')
+
+if [ -f /proc/device-tree/model ]; then
+	raspberryModel=$(tr -d '\0' </proc/device-tree/model)
+fi
 
 if [[ ${modelName} == "ARM"* ]]; then
 	# Pull the Board revision from /proc/cpuinfo
-	boardRev=`grep 'Revision' /proc/cpuinfo | awk '{print $3}' | sed 's/^100//'`
+	boardRev=$(grep 'Revision' /proc/cpuinfo | awk '{print $3}' | sed 's/^100//')
 
 	# Make the board revision human readable
 	case $boardRev in
@@ -59,6 +64,8 @@ if [[ ${modelName} == "ARM"* ]]; then
 		echo "sun8i based Pi Clone"
 	elif [[ ${hardwareField} == *"s5p4418"* ]]; then
 		echo "Samsung Artik"
+	elif [[ ${raspberryModel} == "Raspberry"* ]]; then
+		echo ${raspberryModel}
 	else
 		echo $raspberryVer
 	fi
