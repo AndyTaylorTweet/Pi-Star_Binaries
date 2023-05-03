@@ -6,7 +6,8 @@
 #
 
 # Pull the CPU Model from /proc/cpuinfo
-modelName=$(grep 'model name' /proc/cpuinfo | sed 's/.*: //')
+#modelName=$(grep 'model name' /proc/cpuinfo | sed 's/.*: //')
+modelName=$(lscpu | grep -o ARM)
 hardwareField=$(grep 'Hardware' /proc/cpuinfo | sed 's/.*: //')
 
 if [ -f /proc/device-tree/model ]; then
